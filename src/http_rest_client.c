@@ -43,7 +43,7 @@ void http_rest_client_add_header(char* header_key, char* header_value) {
 }
 
 esp_err_t http_rest_client_set_headers(esp_http_client_handle_t client) {
-    esp_err_t ret;
+    esp_err_t ret = ESP_OK;
     for (int i = 0; i < headers_c; i++) {
 	ret = esp_http_client_set_header(client, headers[i], values[i]);
     }
